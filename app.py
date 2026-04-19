@@ -328,9 +328,13 @@ elif menu == "Heatmaps":
 
             fig, ax = plt.subplots()
             sns.heatmap(table, annot=True, cmap="YlGnBu", linewidths=0.5, ax=ax)
+
             ax.set_title(f"{col1.replace('_',' ').title()} vs {col2.replace('_',' ').title()} Crosstab Heatmap")
-            ax.set_xlabel(col1.replace("_", " ").title())
-            ax.set_ylabel(col2.replace("_", " ").title())
+
+            # ✅ FIXED LABELS
+            ax.set_xlabel(col2.replace("_", " ").title())  # columns
+            ax.set_ylabel(col1.replace("_", " ").title())  # rows
+
             st.pyplot(fig)
 
     elif heatmap_type == "Correlation with Stress Level":
