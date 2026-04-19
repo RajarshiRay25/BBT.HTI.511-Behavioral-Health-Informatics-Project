@@ -427,31 +427,56 @@ elif menu == "SHAP Analysis":
     ⚠️ SHAP explains model behavior and feature contribution, not causation.
     """)
 
-elif menu =="About Me":
-    # Page Title
-    st.header("👤 About Me")
+elif menu == "About Me":
 
-    # Name
-    st.subheader("Name")
-    st.write("**Rajarshi Ray**")
+    st.title("👤 About Me")
 
-    # Study
-    st.subheader("Current Study")
-    st.write("MSc(Tech) in Biomedical Sciences and Engineering")
+    # Create centered layout
+    col1, col2, col3 = st.columns([1,2,1])
 
-    # Major / Track
-    st.subheader("Major / Track")
-    st.write("Biomedical Informatics, Bioinformatics Track")
+    with col2:
+        # Profile image (optional)
+        st.image(
+            "./me.jpg",  # Replace with your image path
+            width=150
+        )
 
-    # University
-    st.subheader("University")
-    st.write("Tampere University, Finland")
+        st.markdown("## **Rajarshi Ray**")
 
-    # Optional: add a small paragraph / intro
-    st.markdown("""
-    Hi! I am Rajarshi, currently pursuing my MSc in Biomedical Sciences and Engineering at Tampere University.  
-    I am focusing on **Biomedical Informatics** with a track in **Bioinformatics**, exploring health data analysis and computational methods in biomedical research.
-    """)
+        st.markdown("### MSc (Tech) Biomedical Sciences & Engineering")
+
+        st.divider()
+
+        # Info sections
+        st.subheader("🎯 Major / Track")
+        st.write("Biomedical Informatics (Bioinformatics Track)")
+
+        st.subheader("🏫 University")
+        st.write("Tampere University, Finland")
+
+        st.divider()
+
+        st.subheader("💡 About")
+        st.write(
+            """
+            I am currently pursuing my MSc in Biomedical Sciences and Engineering 
+            at Tampere University. My focus is on **Biomedical Informatics** with a 
+            specialization in **Bioinformatics**.
+
+            I am interested in health data analysis, machine learning, and building 
+            computational solutions for real-world healthcare challenges.
+            """
+        )
+
+        st.divider()
+
+        # Optional: add small highlight section
+        st.subheader("🚀 Interests")
+        st.write(
+            "- Machine Learning in Healthcare\n"
+            "- Bioinformatics & Omics Data Analysis\n"
+            "- Digital Health & Data-Driven Solutions"
+        )
 
 
 # -----------------------------
